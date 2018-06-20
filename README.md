@@ -5,11 +5,6 @@
 ----
 该项目是根据鸿洋的**wanandroid**网站开发的一款移动端App,一个致力于分享各种Android干货的平台。
 
-
-Apk
-----
-[1.0.3](https://www.pgyer.com/SDIx)
-
 接口
 ----
 [玩Android](http://www.wanandroid.com/blog/show/2)
