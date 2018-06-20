@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/tv_login_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:drawablePadding="8dp"
+            android:text="未登录"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_collect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/uncollect"
+        android:textSize="16sp"
+        android:text="我的收藏"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/line"/>
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/setting"
+        android:textSize="16sp"
+        android:text="设置"/>
+
+    <TextView
+        android:id="@+id/exit_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_margin="30dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:background="@drawable/blue_yuanjiao_sty"
+        android:padding="11dp"
+        android:text="退出登录"/>
+
+</LinearLayout>
