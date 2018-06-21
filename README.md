@@ -5,11 +5,6 @@
 ----
 该项目是根据鸿洋的**wanandroid**网站开发的一款移动端App,一个致力于分享各种Android干货的平台。
 
-
-Apk
-----
-[1.0.3](https://www.pgyer.com/SDIx)
-
 接口
 ----
 [玩Android](http://www.wanandroid.com/blog/show/2)
@@ -47,10 +42,14 @@ Apk
 
 ![我的](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-49-08.png)
 
+感谢
+------
+由于之前没有用过Retrofit，所以网络请求的封装代码来自[kangdongpu](https://github.com/kangdongpu/WanAndroid)
+
 LICENSE
 =======
 
-    Copyright 2018 kangdongpu
+    Copyright 2018 daiji168
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
