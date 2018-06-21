@@ -28,19 +28,19 @@
 
 项目截图
 -------
-![首页](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-47-49.png)
+![首页](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-47-49.png)
 
-![知识体系](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-48-35.png)
+![知识体系](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-48-35.png)
 
-![体系文章](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-49-14.png)
+![体系文章](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-49-27.png)
 
-![我的收藏](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-49-14.png)
+![我的收藏](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-49-14.png)
 
-![搜索](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-48-23.png)
+![搜索](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-48-23.png)
 
-![常用网站](‪E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-48-14.png)
+![常用网站](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-48-14.png)
 
-![我的](E:\studioWorkSpace\WanAndroid\screenshot\Screenshot_2018-06-20-13-49-08.png)
+![我的](https://github.com/daiji168/wanAndroid/blob/master/screenshot/Screenshot_2018-06-20-13-49-08.png)
 
 感谢
 ------
