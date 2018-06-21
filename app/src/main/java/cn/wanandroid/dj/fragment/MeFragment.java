@@ -68,6 +68,7 @@ public class MeFragment extends BaseFragment {
         if(resultCode==RESULT_OK){
             String name = data.getStringExtra("loginName");
             tv_name.setText(name);
+            loginName=name;
             PreUtils.put(Constants.sp_login,name);
         }
     }
@@ -77,6 +78,7 @@ public class MeFragment extends BaseFragment {
         PreUtils.remove("www.wanandroid.com");
 
         tv_name.setText("未登录");
+        loginName=null;
         Intent intent=new Intent("update_collect");
         getActivity().sendBroadcast(intent);
     }

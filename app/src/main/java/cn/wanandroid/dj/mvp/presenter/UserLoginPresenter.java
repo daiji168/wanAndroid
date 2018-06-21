@@ -20,7 +20,6 @@ public class UserLoginPresenter extends BasePresenter<IUserLoginView> {
         super(mvpView);
     }
 
-
     public void login(String userName,String passWord){
         userLoginModel.login(userName, passWord, new RxObserver<Login>() {
             @Override

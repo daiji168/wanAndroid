@@ -34,5 +34,7 @@ local.properties
 proguard/  
   
 # Log Files  
-*.log  
+*.log
+
+*.iml
 <<<<<<< HEAD  

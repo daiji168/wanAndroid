@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity {
     private Fragment treeFragment;
     private Fragment meFragment;
     private Fragment[] fragments;
+    private int currentTab=0;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         swipeBackEnable(false);
+        initFragment(savedInstanceState);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
@@ -69,16 +71,39 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initLayout() {
         initToolBar(toolbar,false,null);
-        initFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment, homeFragment, "mainfragment").show(homeFragment).commit();
-        currentFragment = homeFragment;
     }
 
-    private void initFragment() {
-        homeFragment = new HomeFragement();
-        treeFragment = new TreeFragment();
-        meFragment = new MeFragment();
-        fragments = new Fragment[]{homeFragment, treeFragment,meFragment};
+    private void initFragment(Bundle savedInstanceState) {
+        int index=0;
+        if(savedInstanceState!=null){
+            index = savedInstanceState.getInt("index");
+            homeFragment = getSupportFragmentManager().findFragmentByTag("mainfragment");
+            getSupportFragmentManager().beginTransaction().hide(homeFragment).commit();
+            treeFragment = getSupportFragmentManager().findFragmentByTag("treeFragment");
+            meFragment = getSupportFragmentManager().findFragmentByTag("meFragment");
+            if(treeFragment==null)treeFragment = new TreeFragment();
+            else getSupportFragmentManager().beginTransaction().hide(treeFragment).commit();
+            if(meFragment==null)meFragment = new MeFragment();
+            else getSupportFragmentManager().beginTransaction().hide(meFragment).commit();
+
+            fragments = new Fragment[]{homeFragment,treeFragment, meFragment};
+            getSupportFragmentManager().beginTransaction().show(fragments[index]).commit();
+        }else{
+            homeFragment = new HomeFragement();
+            treeFragment = new TreeFragment();
+            meFragment = new MeFragment();
+            fragments = new Fragment[]{homeFragment, treeFragment,meFragment};
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment, homeFragment,fragmentTag(index)).show(homeFragment).commit();
+        }
+        currentFragment = fragments[index];
+    }
+
+    private String fragmentTag(int index){
+        String tag="mainfragment";
+        if(index==0)tag="mainfragment";
+        if(index==1)tag="treeFragment";
+        if(index==2)tag="meFragment";
+        return tag;
     }
 
     @Override
@@ -108,16 +133,14 @@ public class MainActivity extends BaseActivity {
      * @param index
      */
     public void showFragment(int index) {
+        currentTab=index;
+        String fragmentTag = fragmentTag(index);
         if (index == 0) {
-            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[0], "mainfragment");
+            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[0], fragmentTag);
         } else if (index == 1) {
-            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[1], "treeFragment");
+            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[1], fragmentTag);
         } else if (index == 2) {
-            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[2], "meFragment");
-        } else if (index == 3) {
-            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[3], "paimaifragment");
-        } else if (index == 4) {
-            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[4], "mefragment");
+            addOrShowFragment(getSupportFragmentManager().beginTransaction(), fragments[2], fragmentTag);
         }
     }
 
@@ -132,5 +155,11 @@ public class MainActivity extends BaseActivity {
             transaction.hide(currentFragment).show(fragment).commit();
         }
         currentFragment = fragment;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("index",currentTab);
+        super.onSaveInstanceState(outState);
     }
 }
